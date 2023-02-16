@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import axios from 'axios';
 
 const SIZES = ["small", "medium", "large"];
 const TOPPINGS = ["pepperoni", "mushrooms", "onions", "sausage", "bacon", "extra cheese"];
@@ -42,19 +41,6 @@ function App() {
     alert(`Your order is: ${size} pizza with ${toppings.join(", ")} toppings.\nYour total is $${price.toFixed(2)}. Thank you for ordering from Pizza Place!`);
     setSize("");
     setToppings([]);
-
-    const order = {
-      size: size,
-      toppings: toppings,
-      price: price
-    };
-    axios.post('/orders', order)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 
   function handleDownload() {
@@ -89,4 +75,10 @@ function App() {
         <h2>Your Order:</h2>
         <p>Size: {size}</p>
         <p>Toppings: {toppings.join(", ")}</p>
-      </div
+      </div>
+      <button onClick={handleDownload}>Download PDF</button>
+    </div>
+  );
+}
+
+export default App;
