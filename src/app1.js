@@ -59,7 +59,7 @@ function App() {
       <h2>Our available pizza sizes are:</h2>
       {SIZES.map((size) => (
         <label key={size}>
-          <input type="radio" name="size" value={size} checked={size === size} onChange={handleSizeChange} />
+          <input type="radio" name="size" value={size} onChange={handleSizeChange} />
           {size}
         </label>
       ))}
