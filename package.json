@@ -8,7 +8,8 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
     "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.1"
+    "jspdf": "^2.5.1",
+    "asana": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
