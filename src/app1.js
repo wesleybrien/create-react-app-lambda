@@ -78,7 +78,7 @@ function App() {
       </div>
       <button onClick={handleDownload}>Download PDF</button>
     </div>
-
+  )
 }
 
 export default App;
